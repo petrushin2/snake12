@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.facebook.applinks.AppLinkData;
 
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenuActivity extends AppCompatActivity {
 
     private RelativeLayout snakeLayout;
     private Animation compileAnim;
@@ -66,7 +66,7 @@ public class MainMenu extends AppCompatActivity {
 
     private void initClassic(){
         classicBtn = (ImageView) findViewById(R.id.classic);
-        compileAnim = AnimationUtils.loadAnimation(MainMenu.this,R.anim.anim_for_classic_button);
+        compileAnim = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.anim_for_classic_button);
         compileAnim.setDuration(GameSettings.ANIMATION_OPEN_BUTTON_DURATION);
         compileAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -80,7 +80,7 @@ public class MainMenu extends AppCompatActivity {
                 classicBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intentClassic = new Intent(MainMenu.this,ClassicSnake.class);
+                        Intent intentClassic = new Intent(MainMenuActivity.this, EasySnake.class);
                         intentClassic.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intentClassic);
                     }
@@ -98,7 +98,7 @@ public class MainMenu extends AppCompatActivity {
 
     private void initNoWalls(){
         noWallsBtn = (ImageView) findViewById(R.id.no_walls);
-        compileAnim = AnimationUtils.loadAnimation(MainMenu.this,R.anim.anim_for_no_button);
+        compileAnim = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.anim_for_no_button);
         compileAnim.setDuration(GameSettings.ANIMATION_OPEN_BUTTON_DURATION);
         compileAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -112,7 +112,7 @@ public class MainMenu extends AppCompatActivity {
                 noWallsBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intentNoWalls = new Intent(MainMenu.this,NoWallsSnake.class);
+                        Intent intentNoWalls = new Intent(MainMenuActivity.this,NoWallsSnake.class);
                         intentNoWalls.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intentNoWalls);
                     }
@@ -142,7 +142,7 @@ public class MainMenu extends AppCompatActivity {
 
     private void initBomb(){
         bombBtn = (ImageView) findViewById(R.id.bomb);
-        compileAnim = AnimationUtils.loadAnimation(MainMenu.this,R.anim.anim_for_bomb_button);
+        compileAnim = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.anim_for_bomb_button);
         compileAnim.setDuration(GameSettings.ANIMATION_OPEN_BUTTON_DURATION);
         compileAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -156,7 +156,7 @@ public class MainMenu extends AppCompatActivity {
                 bombBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent bombSnakeIntent = new Intent(MainMenu.this, OneMoreSnake.class);
+                        Intent bombSnakeIntent = new Intent(MainMenuActivity.this, OneMoreSnake.class);
                         bombSnakeIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(bombSnakeIntent);
                     }
@@ -180,7 +180,7 @@ public class MainMenu extends AppCompatActivity {
 
 
         //Set up animation for title left
-        compileAnim = AnimationUtils.loadAnimation(MainMenu.this,R.anim.back_anim_for_title_left);
+        compileAnim = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.back_anim_for_title_left);
         compileAnim.setDuration(GameSettings.ANIMATION_HIDE_TITLE_DURATION);
         compileAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -201,7 +201,7 @@ public class MainMenu extends AppCompatActivity {
         titleLeft.startAnimation(compileAnim);
 
         //Set up animation for title middle
-        compileAnim = AnimationUtils.loadAnimation(MainMenu.this,R.anim.back_anim_for_title_middle);
+        compileAnim = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.back_anim_for_title_middle);
         compileAnim.setDuration(GameSettings.ANIMATION_HIDE_TITLE_DURATION);
         compileAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -223,7 +223,7 @@ public class MainMenu extends AppCompatActivity {
 
 
         //Set up animation for title right
-        compileAnim = AnimationUtils.loadAnimation(MainMenu.this,R.anim.back_anim_for_title_right);
+        compileAnim = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.back_anim_for_title_right);
         compileAnim.setDuration(GameSettings.ANIMATION_HIDE_TITLE_DURATION);
         compileAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -247,7 +247,7 @@ public class MainMenu extends AppCompatActivity {
 
     private void initSettings(){
         settingsBtn  = (ImageView) findViewById(R.id.settings);
-        compileAnim = AnimationUtils.loadAnimation(MainMenu.this,R.anim.anim_for_settings_button);
+        compileAnim = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.anim_for_settings_button);
         compileAnim.setDuration(GameSettings.ANIMATION_OPEN_BUTTON_DURATION);
         compileAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -267,25 +267,25 @@ public class MainMenu extends AppCompatActivity {
                         noWallsBtn.setImageResource(R.mipmap.menu_options);
                         bombBtn.setImageResource(R.mipmap.menu_options);
 
-                        Animation animation = AnimationUtils.loadAnimation(MainMenu.this,R.anim.reverse_for_classic_button);
+                        Animation animation = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.reverse_for_classic_button);
                         animation.setDuration(GameSettings.ANIMATION_CLOSE_BUTTON_DURATION);
 
-                        Animation animation2 = AnimationUtils.loadAnimation(MainMenu.this,R.anim.reverse_for_no_button);
+                        Animation animation2 = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.reverse_for_no_button);
                         animation2.setDuration(GameSettings.ANIMATION_CLOSE_BUTTON_DURATION);
 
-                        Animation animation3 = AnimationUtils.loadAnimation(MainMenu.this,R.anim.reverse_for_bomb_button);
+                        Animation animation3 = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.reverse_for_bomb_button);
                         animation3.setDuration(GameSettings.ANIMATION_CLOSE_BUTTON_DURATION);
 
-                        Animation animation4 = AnimationUtils.loadAnimation(MainMenu.this,R.anim.reverse_for_settings_button);
+                        Animation animation4 = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.reverse_for_settings_button);
                         animation4.setDuration(GameSettings.ANIMATION_CLOSE_BUTTON_DURATION);
 
-                        Animation animationTitleLeft = AnimationUtils.loadAnimation(MainMenu.this,R.anim.anim_for_title_left);
+                        Animation animationTitleLeft = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.anim_for_title_left);
                         animationTitleLeft.setDuration(GameSettings.ANIMATION_SHOW_TITLE_DURATION);
 
-                        Animation animationTitleMiddle = AnimationUtils.loadAnimation(MainMenu.this,R.anim.anim_for_title_middle);
+                        Animation animationTitleMiddle = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.anim_for_title_middle);
                         animationTitleMiddle.setDuration(GameSettings.ANIMATION_SHOW_TITLE_DURATION);
 
-                        Animation animationTitleRight = AnimationUtils.loadAnimation(MainMenu.this,R.anim.anim_for_title_right);
+                        Animation animationTitleRight = AnimationUtils.loadAnimation(MainMenuActivity.this,R.anim.anim_for_title_right);
                         animationTitleRight.setDuration(GameSettings.ANIMATION_SHOW_TITLE_DURATION);
 
                         classicBtn.startAnimation(animation);
@@ -300,7 +300,7 @@ public class MainMenu extends AppCompatActivity {
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                Intent settingsIntent = new Intent(MainMenu.this,Settings.class);
+                                Intent settingsIntent = new Intent(MainMenuActivity.this,Settings.class);
                                 settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                                 startActivity(settingsIntent);
                             }

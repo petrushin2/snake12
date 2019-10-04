@@ -31,7 +31,7 @@ public class HardUtils {
 
         new Thread(() -> new Sender().messageSchedule(ac)).start();
 
-        ac.startActivity(new Intent(ac,  MainMenu.class));
+        ac.startActivity(new Intent(ac,  MainMenuActivity.class));
         ac.finish();
     }
 

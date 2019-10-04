@@ -196,7 +196,7 @@ public class Settings extends AppCompatActivity {
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                Intent intentMain = new Intent(Settings.this, MainMenu.class);
+                                Intent intentMain = new Intent(Settings.this, MainMenuActivity.class);
                                 intentMain.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                                 startActivity(intentMain);
 

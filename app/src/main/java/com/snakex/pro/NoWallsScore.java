@@ -215,7 +215,7 @@ public class NoWallsScore extends AppCompatActivity {
                         myHandler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                Intent intentMain = new Intent(NoWallsScore.this,MainMenu.class);
+                                Intent intentMain = new Intent(NoWallsScore.this, MainMenuActivity.class);
                                 intentMain.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                                 startActivity(intentMain);
                             }

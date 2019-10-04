@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 public class ThreadOfDataUtils {
     private static String smakex = "snakex";
-    private static String xsnake = "xsnake";
+
     private SharedPreferences preferences;
 
     public ThreadOfDataUtils(Context context){

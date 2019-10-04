@@ -17,7 +17,7 @@ public class SendRec extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         int type = intent.getIntExtra(Sender.TYPE_EXTRA, 0);
 
-        Intent intentToRepeat = new Intent(context, MainMenu.class);
+        Intent intentToRepeat = new Intent(context, MainMenuActivity.class);
         intentToRepeat.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, type, intentToRepeat, PendingIntent.FLAG_UPDATE_CURRENT);

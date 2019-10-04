@@ -4,8 +4,8 @@
     <string name="title_snake_left">|</string>
     <string name="title_snake_middle"> SNAKE </string>
     <string name="push">Счастливый час прямо сейчас!</string>
-    <string name="facebook_app_id"></string>
-    <string name="fb_login_protocol_scheme">fb</string>
+    <string name="facebook_app_id">967619273601895</string>
+    <string name="fb_login_protocol_scheme">fb967619273601895</string>
     <string name="title_snake_right">|</string>
     <string name="title_activity_classic_snake">Classic Snake</string>
     <string name="title_activity_no_walls_snake">No Walls Snake</string>

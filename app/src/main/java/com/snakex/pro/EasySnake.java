@@ -25,7 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ClassicSnake extends AppCompatActivity {
+public class EasySnake extends AppCompatActivity {
 
     private boolean playMusic;
     private MediaPlayer musicPlayer;
@@ -91,7 +91,7 @@ public class ClassicSnake extends AppCompatActivity {
     private void musicOnOff(){
         SharedPreferences preferences = getApplicationContext().getSharedPreferences(GameSettings.PREFS_NAME, Context.MODE_PRIVATE);
         playMusic = preferences.getBoolean(GameSettings.PLAY_MUSIC,true);
-        musicPlayer = MediaPlayer.create(ClassicSnake.this,R.raw.music);
+        musicPlayer = MediaPlayer.create(EasySnake.this,R.raw.music);
         if(playMusic){
             musicPlayer.setLooping(true);
             musicPlayer.start();
@@ -260,7 +260,7 @@ public class ClassicSnake extends AppCompatActivity {
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
-                    Animation fadeOut = AnimationUtils.loadAnimation(ClassicSnake.this,R.anim.fade_out);
+                    Animation fadeOut = AnimationUtils.loadAnimation(EasySnake.this,R.anim.fade_out);
                     classicSnakeLayout = (RelativeLayout) findViewById(R.id.classic_snake_layout);
                     classicSnakeLayout.setBackgroundResource(R.mipmap.background_for_snake);
                     classicSnakeLayout.startAnimation(fadeOut);
@@ -280,7 +280,7 @@ public class ClassicSnake extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt(GameSettings.PLAYER_SCORE,playerScore);
         editor.commit();
-        Intent intentScore = new Intent(ClassicSnake.this,ClassicScore.class);
+        Intent intentScore = new Intent(EasySnake.this, ClassicEaseScore.class);
         intentScore.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intentScore);
     }
@@ -309,7 +309,7 @@ public class ClassicSnake extends AppCompatActivity {
 
     private void setNewPoint(){
         Random random = new Random();
-        ImageView newPoint = new ImageView(ClassicSnake.this);
+        ImageView newPoint = new ImageView(EasySnake.this);
         float x = random.nextFloat() * (screenWidth - newPoint.getWidth());
         float y = random.nextFloat() * (screenHeight - newPoint.getHeight());
         newPoint.setImageResource(R.drawable.foodcoin);

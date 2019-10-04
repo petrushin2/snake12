@@ -4,22 +4,46 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.snakex.pro"
+        applicationId "com.snakex.profix"
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+
+    signingConfigs {
+        production {
+            storeFile file("../keystore/android_release.keystore")
+            storePassword "snakexgol_release_pass"
+            keyAlias "snakexgol_release"
+            keyPassword "snakexgol_release_pass"
+        }
+
+        debug {
+            storeFile file("../keystore/android_debug.keystore")
+            storePassword "snakexgol_debug_pass"
+            keyAlias "snakexgol_debug"
+            keyPassword "snakexgol_debug_pass"
         }
     }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.production
+            proguardFiles 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
     compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 
