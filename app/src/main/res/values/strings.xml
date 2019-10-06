@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">X-Гол</string>
+    <string name="app_name">X-Goal</string>
     <string name="action_settings">Settings</string>
     <string name="title_snake_left">|</string>
     <string name="title_snake_middle"> SNAKE </string>
-    <string name="push">Счастливый час прямо сейчас!</string>
+    <string name="push">Lucky time!</string>
     <string name="facebook_app_id">967619273601895</string>
     <string name="fb_login_protocol_scheme">fb967619273601895</string>
     <string name="title_snake_right">|</string>
