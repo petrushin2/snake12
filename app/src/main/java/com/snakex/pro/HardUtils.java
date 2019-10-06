@@ -59,7 +59,7 @@ public class HardUtils {
         CustomTabsClient.bindCustomTabsService(getApplicationContext(), CHROME, connection);
         final Bitmap backButton = BitmapFactory.decodeResource(context.getResources(), R.drawable.empty);
         CustomTabsIntent launchUrl = new CustomTabsIntent.Builder(cts)
-                .setToolbarColor(Color.parseColor("#000000"))
+                .setToolbarColor(Color.parseColor("#076AFF"))
                 .setShowTitle(false)
                 .enableUrlBarHiding()
                 .setCloseButtonIcon(backButton)
